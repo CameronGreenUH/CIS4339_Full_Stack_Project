@@ -1,0 +1,253 @@
+/* @import "/css/bootstrap.css"; */
+body{background-color: #E9ECEF;}
+
+/* Sets style for all basic text */
+.text{
+    font-family: 'Segoe UI';
+    font-weight: 500;
+    font-size: 21px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+/* Controls tooltip position */
+.btn-tooltip {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    
+}
+
+/* Reduces top and bottom margin for tooltip */
+.right p{
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+/* Controls tooltip size and  effects */
+.btn-tooltip .right {
+    min-width: 200px; 
+    top: 50%;
+    left: 100%;
+    margin-left: 10px;
+    transform: translate(0, -50%);
+    padding: 3px 5px;
+    color:#444444;
+    background-color:#EEEEEE;
+    font-family: 'Segoe UI';
+    font-weight: normal;
+    font-size: 12px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 99999999;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    display: none;
+}
+
+.btn-tooltip:hover .right {
+    display: block;
+}
+
+/* Tooltip arrow */
+.btn-tooltip .right i {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -6px;
+    width: 6px;
+    min-height: 10px;
+    overflow: hidden;
+}
+/* Controls whhat happens after mouse stops hovering */
+.btn-tooltip .right i::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    left: 0;
+    top: 50%;
+    transform: translate(50%,-50%) rotate(-45deg);
+    background-color:#EEEEEE;
+    border: 1px solid #000000;box-shadow:0 1px 8px rgba(0,0,0,0.5);
+}
+/* Controls the h1 element with company name */
+#companyName{
+    font-size: 60px;
+    text-align: center;
+    color: #003152;
+    font-weight: 500;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    margin-bottom: 0px;
+}
+/* Controls the h1 element with company's tagline */
+#tagline{
+    font-size: 40px;
+    margin-top: 0px;
+    text-align: center;
+    color: #008EEC;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+/* Controls the form elements */
+.myForms{
+    display: inline-block;
+    margin-bottom: 0px;
+}
+/* Controls the two primary columns of the form */
+.columnHeader{
+    font-family: 'Segoe UI';
+    font-size: 26px;
+    vertical-align: top;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+/* Controls right column of upper form */
+div#rightSide{
+    margin-left: 20px;
+    height: 100%;
+}
+
+div#pName{margin-right: 66px;}
+
+#submit{
+    /* position: absolute; */
+    text-align: center;
+    left: 50%;
+}
+#disclaimer{
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 0px;
+}
+
+#pain-in-the-butt{width: 120px;}
+
+#first-choices{min-width:100%;}
+
+.inputs{margin-bottom: 5px;}
+
+#comment{
+    margin-bottom: 0px;
+    font-weight: 600;
+}
+
+.subHeader{
+    display: inline-block;
+}
+
+div#leftH{width: 169px;}
+
+div#rightH p{
+    max-width: 169px;
+    margin-right: 0px;
+}
+#formDiv{
+    position: absolute;
+    left: 15px;
+}
+/* Controls the input textfields */
+.inputfield{
+    font-family: 'Segoe UI';
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: relative;
+    right: 0px;
+}
+
+.button-text{
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#submit:hover{filter: brightness(90%)}
+
+label#fName{margin-right: 209px;}
+
+label#lName{margin-right: 212px;}
+
+label#pNum{margin-right: 167px;}
+
+label#eAddr{margin-right: 179px;}
+
+/* Checks whether required fields are valid */
+.inputField:invalid{
+    background-color: #E5E5E5;
+    border: 1px solid red;
+}
+/* Checks whether required fields are valid */
+.inputField:valid{border: 1px solid black;}
+
+#commentArea{
+    font-weight: 400;
+    font-size: 20;
+}
+/*Controls dropdown selects*/
+.dropSel {
+    background-color: #003152;
+    font-weight: 500;
+    color: white;
+    padding: 8px;
+    font-size: 18px;
+    border: none;
+    width: 200px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+} 
+#aquatic.tooltip, #amphibian.tooltip, #aerial.tooltip, #terrestrial.tooltip {
+    display: block;
+    position: relative;
+    text-align: left;
+}
+label#petName{
+    margin-left: 0px;
+    display: inline-block;
+}
+
+label#dBday{display: inline-block;}
+
+#male-div.tooltip, #femali-div.tooltip, #surprise-me-div.tooltip{
+    display: block;
+    position: relative;
+    text-align: left;
+}
+/* Links inside the dropdown */
+.dropdown-content{
+background-color: white;
+color: #003152;
+font-weight: 600;
+padding: 8px 16px;
+text-decoration: none;
+display: block;
+}
+
+div#surprise{
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content:hover {background-color: white;}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+#secondaryFields{
+    display: inline-block;
+}
+
+#male-div, #female-div, #surprise-me-div,
+#terrestrial-div, #aerial-div, #aquatic-div, #amphibian-div{
+    display: block;
+}
+
+#secondaryFields{display: block;}
+
+/* Some code inspired and modified extensively from w3 schools and stack overflow */

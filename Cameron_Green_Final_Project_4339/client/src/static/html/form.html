@@ -1,0 +1,290 @@
+<html lang="en" style = "height: 100;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src = "https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Pet Designer</title>
+    <style>
+        html{height: 100%;}
+
+        body{
+            background-color: #E9ECEF;
+            height: 100%;
+        }    
+        .container {max-width: 960px;}
+
+        .lh-condensed { line-height: 1.25; }    
+
+        .modal-confirm {		
+		color: #636363;
+		width: 325px;
+	    }
+        .modal-confirm .modal-content {
+            padding: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+        .modal-confirm .modal-header {
+            border-bottom: none;   
+            position: relative;
+        }
+        .modal-confirm h4 {
+            text-align: center;
+            font-size: 26px;
+            margin: 30px 0 -15px;
+        }
+        .modal-confirm .form-control, .modal-confirm .btn {
+            min-height: 40px;
+            border-radius: 3px; 
+        }
+        .modal-confirm .close {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }	
+        .modal-confirm .modal-footer {
+            border: none;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 13px;
+        }	
+        .modal-confirm .icon-box {
+            color: #fff;		
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: -70px;
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            z-index: 9;
+            background: #82ce34;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+        .modal-confirm .icon-box i {
+            font-size: 58px;
+            position: relative;
+            top: 3px;
+        }
+        .modal-confirm.modal-dialog {
+            margin-top: 80px;
+        }
+        .modal-confirm .btn {
+            color: #fff;
+            border-radius: 4px;
+            background: #82ce34;
+            text-decoration: none;
+            transition: all 0.4s;
+            line-height: normal;
+            border: none;
+        }
+        .modal-confirm .btn:hover, .modal-confirm .btn:focus {
+            background: #6fb32b;
+            outline: none;
+        }
+        
+        .trigger-btn {
+            display: inline-block;
+            margin: 100px auto;
+	    }
+  </style>
+</head>
+<header>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Pandora's Build-a-Pet</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/">Home </a>
+            <a class="nav-item nav-link active" href="/form">Form<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/checkout">Check Out</a>
+            <a class="nav-item nav-link" href="/faq">FAQ</a>
+          </div>
+        </div>
+      </nav>
+</header>
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h2 class="display-3">Pet Designer</h2><br><br><br>
+        </div>
+        <div class="row">
+            <div class="col-md-8 order-md-1 offset-md-2">
+                <h4 class="mb-3">Pet Information</h4>
+                <form class="needs-validation" novalidate="">
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="petName">Pet Name</label>
+                            <input type="text" class="form-control" id="petName" placeholder="" value="" required="">
+                            <small class="text-muted">The name for your pet</small>
+                            <div class="invalid-feedback"> Valid first name is required. </div>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;">
+                        <label style="display: block;">Sex</label>
+                        <small class="text-muted">The sex of your pet</small>
+                        <div class="d-block my-3" style="display: inline-block;">
+                            <div class="custom-control custom-radio">
+                                <input id="male" name="sex" type="radio" class="custom-control-input" required="">
+                                <label class="custom-control-label" for="male">Male</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="female" name="sex" type="radio" class="custom-control-input" required="">
+                                <label class="custom-control-label" for="female">Female</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="hermaphrodite" name="sex" type="radio" class="custom-control-input" required="">
+                                <label class="custom-control-label" for="hermaphrodite">Hermaphrodite</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: inline-block;" class="col-md-4 offset-md-2">
+                        <label stlye="display: block">Reproduction</label>
+                        <small class="text-muted" style="display: block;">How your pet reproduces</small>
+                        <div class="d-block my-3">
+                            <div class="custom-control custom-radio">
+                                <input id="sexual" name="reproduction" type="radio" class="custom-control-input" required="">
+                                <label class="custom-control-label" for="sexual">Sexual</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="asexual" name="reproduction" type="radio" class="custom-control-input" required="">
+                                <label class="custom-control-label" for="asexual">Asexual</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="sterile" name="reproduction" type="radio" class="custom-control-input" required="">
+                                <label class="custom-control-label" for="sterile">Sterile</label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <h4 class="mb-3">Evolutionary Traits</h4>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="terrain">Terrain</label>
+                            <select class="custom-select d-block w-100" id="terrain" required="">
+                                <option value="">Choose...</option>
+                                <option>Aerial</option>
+                                <option>Terrestrial</option>
+                                <option>Aquatic</option>
+                                <option>Amphibian</option>
+                            </select>
+                            <small class="text-muted">Terrain your pet is adapted for</small>
+                            <div class="invalid-feedback"> Please provide a valid terrain type. </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="respiratory">Respiratory System</label>
+                            <select class="custom-select d-block w-100" id="respiratory" required="">
+                                <option value="">Choose...</option>
+                                <option>Lungs</option>
+                                <option>Gills</option>
+                                <option>Pores</option>
+                            </select>
+                            <small class="text-muted">How your pet circulates oxygen</small>
+                            <div class="invalid-feedback"> Please select a valid respiratory system. </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="locomotion">Locomotion</label>
+                            <select class="custom-select d-block w-100" id="locomotion" required="">
+                                <option value="">Choose...</option>
+                                <option>Legs</option>
+                                <option>Wings</option>
+                                <option>Fins</option>
+                                <option>Undulation</option>
+                            </select>
+                            <small class="text-muted">How your pet will move</small>
+                            <div class="invalid-feedback"> Please select a valid form of locomotion. </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="vision">Vision</label>
+                            <select class="custom-select d-block w-100" id="vision" required="">
+                                <option value="">Choose...</option>
+                                <option>Compound</option>
+                                <option>Lense</option>
+                                <option>Chambered</option>
+                                <option>Blind</option>
+                            </select>
+                            <small class="text-muted">How light is processed by the eye(s)</small>
+                            <div class="invalid-feedback"> Please select a valid vision type. </div>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <h4 class="mb-3">Enhancements</h4>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="faster">
+                        <label class="custom-control-label" for="faster">Efficient circulation for faster movement</label>
+                    </div><br>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="stronger">
+                        <label class="custom-control-label" for="stronger">Denser muscle mass for increased strength</label>
+                    </div><br>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="smarter">
+                        <label class="custom-control-label" for="smarter">Neural network restructuring for improved information processing</label>
+                    </div><br>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="invisibility">
+                        <label class="custom-control-label" for="invisibility">Advanced pigment manipulation for adaptable camouflage</label>
+                    </div><br>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="tougher">
+                        <label class="custom-control-label" for="tougher">Increased calcium and phosphorus levels for thicker bones</label>
+                    </div><br>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="sunglasses">
+                        <label class="custom-control-label" for="sunglasses">Nictitating membrane; a third translucent eyelid that protects eyes from sunlight and minor scratches</label>
+                    </div><br>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="regeneration">
+                        <label class="custom-control-label" for="regeneration">Quicker cell division time to provide increased regenerative capabilities</label>
+                    </div><br>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="hunting">
+                        <label class="custom-control-label" for="hunting">Increased nerve and receptor clusters in nose to heighten nasal sensitivity</label>
+                    </div><br>
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block trigger-btn" data-toggle="modal" href="#myModal" type="submit">Submit Pet Design</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>				
+                    <h4 class="modal-title">Success!</h4>	
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Your pet's design has successfully been saved. Please continue to checkout.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src = "/html/js/checkout.js"></script>
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center" style>
+        <small>Copyright &copy; 2020 Designed by <u>Cameron Green</u>. All rights reserved.</small>
+    </div>
+</footer>
+</html>
